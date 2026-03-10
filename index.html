@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DZBuy | نتائج البحث</title>
+  <meta name="description" content="واجهة تسوق احترافية من DZBuy بتصميم عصري وهوية زرقاء.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="top-strip" id="topAnnounce">
+    <a class="promo-link" href="free-shipping.html">
+      <span class="promo-icon">🚚</span>
+      <div>
+        <strong id="promoLeftTitle">شحن مجاني لجميع الطلبات</strong>
+        <small id="promoLeftSub">عرض لفترة محدودة</small>
+      </div>
+    </a>
+    <a class="promo-link" href="returns-policy.html">
+      <span class="promo-icon"></span>
+      <div class="middle-announce">
+        <strong id="middleAnnounceTitle">ضمان التوصيل</strong>
+        <small id="middleAnnounceSub">يمكنك استرداد المال في حال وجود مشاكل</small>
+      </div>
+    </a>
+    <a class="promo-link" href="app.html">
+      <span class="promo-icon">📱</span>
+      <div>
+        <strong id="promoRightTitle">تنزيل تطبيق DZBuy</strong>
+        <small id="promoRightSub">تسوق أسرع من الهاتف</small>
+      </div>
+    </a>
+  </div>
+
+  <header class="header-white">
+    <div class="header-white-inner">
+      <div class="left-tools">
+        <a href="cart.html" class="tool-link icon-link" aria-label="السلة">
+          <img src="images/cart.png" alt="السلة">
+        </a>
+        <div class="lang-switch">
+          <button id="langToggle" class="lang-toggle" type="button" aria-label="تغيير اللغة">
+            <img src="images/launge.png" alt="Language">
+          </button>
+          <div id="langMenu" class="lang-menu">
+            <button type="button" class="lang-option" data-lang="ar">العربية</button>
+            <button type="button" class="lang-option" data-lang="fr">Français</button>
+            <button type="button" class="lang-option" data-lang="en">English</button>
+          </div>
+        </div>
+        <a href="support.html" class="tool-link icon-link" aria-label="الدعم">
+          <img src="images/support.png" alt="الدعم">
+        </a>
+        <a href="account.html" id="accountLink" class="tool-link icon-link account-link" aria-label="الحساب">
+          <img src="images/login.png" alt="الحساب">
+        </a>
+      </div>
+
+      <form class="search-box" id="searchForm">
+        <button type="submit" aria-label="بحث">
+          <img src="images/search.png" alt="بحث">
+        </button>
+        <input id="searchInput" type="text" placeholder="ابحث عن منتج..." autocomplete="off">
+        <label for="cameraInput" class="camera-btn" aria-label="بحث بالكاميرا">
+          <img src="images/camera.png" alt="كاميرا">
+        </label>
+        <input id="cameraInput" class="camera-input" type="file" accept="image/*" capture="environment">
+      </form>
+
+      <nav class="top-nav" id="categoryBar">
+        <div class="categories-wrap">
+          <button type="button" class="categories-trigger" aria-label="فتح الفئات">
+            <span id="categoriesTriggerText">الفئات</span>
+            <span class="arrow">▾</span>
+          </button>
+
+          <div class="mega-menu">
+            <div class="mega-left" id="megaLeft">
+              <a href="catalog.html#men-shoes" class="mini-cat">
+                <img src="images/logo.jpg" alt="">
+                <p>أحذية كاجوال للرجال</p>
+              </a>
+              <a href="catalog.html#women-shoes" class="mini-cat">
+                <img src="images/logo.jpg" alt="">
+                <p>أحذية النساء</p>
+              </a>
+              <a href="catalog.html#home-decor" class="mini-cat">
+                <img src="images/logo.jpg" alt="">
+                <p>ديكور المنزل</p>
+              </a>
+              <a href="catalog.html#kitchen" class="mini-cat">
+                <img src="images/logo.jpg" alt="">
+                <p>المطبخ والمنزل</p>
+              </a>
+              <a href="catalog.html#bags" class="mini-cat">
+                <img src="images/logo.jpg" alt="">
+                <p>الحقائب والإكسسوارات</p>
+              </a>
+              <a href="catalog.html#beauty" class="mini-cat">
+                <img src="images/logo.jpg" alt="">
+                <p>الجمال والصحة</p>
+              </a>
+            </div>
+
+            <div class="mega-right">
+              <a href="best-sellers.html" class="mega-topic" data-topic="best" id="topicBest">المنتجات الأكثر مبيعًا</a>
+              <a href="catalog.html#home-kitchen" class="mega-topic" data-topic="home" id="topicHome">البيت والمطبخ</a>
+              <a href="catalog.html#women-clothes" class="mega-topic" data-topic="women" id="topicWomen">ملابس نسائية</a>
+              <a href="catalog.html#men-clothes" class="mega-topic" data-topic="men" id="topicMen">ملابس رجالية</a>
+              <a href="catalog.html#jewelry" class="mega-topic" data-topic="jewelry" id="topicJewelry">المجوهرات والاكسسوارات</a>
+              <a href="catalog.html#beauty" class="mega-topic" data-topic="beauty" id="topicBeauty">الجمال والصحة</a>
+              <a href="catalog.html#toys" class="mega-topic" data-topic="toys" id="topicToys">الدمى والألعاب</a>
+            </div>
+          </div>
+        </div>
+
+        <a href="new-arrivals.html" id="navNew">جديد</a>
+        <a href="five-stars.html" id="navFive">منتجات بتقييم 5 نجوم</a>
+        <a href="best-sellers.html" id="navBest">المنتجات الأكثر مبيعًا</a>
+        <a class="logo-badge" href="index.html" aria-label="الرئيسية">
+          <img src="images/logo.jpg" alt="DZBuy">
+        </a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="القائمة">☰</button>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="result-head">
+      <div class="source-switch" aria-label="اختيار مصدر المنتجات">
+        <button class="source-btn active" data-source="temu" type="button" id="sourceTemu">منتجات Temu</button>
+        <button class="source-btn" data-source="aliexpress" type="button" id="sourceAli">منتجات AliExpress</button>
+      </div>
+      <div class="chips">
+        <button class="chip active" data-sort="all" type="button" id="chipAll">الكل</button>
+        <button class="chip" data-sort="new" type="button" id="chipNew">وصل حديثًا</button>
+        <button class="chip" data-sort="top" type="button" id="chipTop">الأعلى تقييمًا</button>
+        <button class="chip" data-sort="low" type="button" id="chipLow">أقل سعر</button>
+      </div>
+    </section>
+    <p id="searchNotice" class="search-notice"></p>
+
+    <section class="products" id="productsGrid">
+      <article class="product-card" data-id="p1" data-source="temu" data-title="هاتف ذكي Redmi Note" data-price="136.67" data-rating="4.8" data-new="2">
+        <div class="media media-phone"></div>
+        <h3>هاتف ذكي Redmi Note 5G</h3>
+        <p class="meta">مباع 281+ • شحن سريع</p>
+        <div class="price-row"><span class="discount">%45-</span><del>$249.59</del><strong>$136.67</strong></div>
+        <p class="rate">★ ★ ★ ★ ★ <span>4.8</span></p>
+      </article>
+
+      <article class="product-card" data-id="p2" data-source="temu" data-title="حذاء رجالي كاجوال" data-price="26.18" data-rating="4.7" data-new="6">
+        <div class="media media-shoes-dark"></div>
+        <h3>حذاء رياضي كاجوال للرجال</h3>
+        <p class="meta">مباع 689+ • جودة ممتازة</p>
+        <div class="price-row"><span class="discount">%18-</span><del>$31.96</del><strong>$26.18</strong></div>
+        <p class="rate">★ ★ ★ ★ ★ <span>4.7</span></p>
+      </article>
+
+      <article class="product-card" data-id="p3" data-source="temu" data-title="ساعة رجالية أنيقة" data-price="7.71" data-rating="4.9" data-new="1">
+        <div class="media media-watch-gold"></div>
+        <h3>ساعة يد رجالية فاخرة</h3>
+        <p class="meta">مباع 4.1K+ • تصميم مميز</p>
+        <div class="price-row"><span class="discount">%27-</span><del>$10.62</del><strong>$7.71</strong></div>
+        <p class="rate">★ ★ ★ ★ ★ <span>4.9</span></p>
+      </article>
+
+      <article class="product-card" data-id="p4" data-source="temu" data-title="حذاء نسائي أبيض" data-price="20.69" data-rating="4.8" data-new="4">
+        <div class="media media-shoes-white"></div>
+        <h3>حذاء نسائي كاجوال أبيض</h3>
+        <p class="meta">مباع 10K+ • مريح وخفيف</p>
+        <div class="price-row"><span class="discount">%15-</span><del>$24.59</del><strong>$20.69</strong></div>
+        <p class="rate">★ ★ ★ ★ ★ <span>4.8</span></p>
+      </article>
+
+      <article class="product-card" data-id="p5" data-source="temu" data-title="حذاء شبابي بني" data-price="24.65" data-rating="4.6" data-new="5">
+        <div class="media media-shoes-brown"></div>
+        <h3>حذاء شبابي بني عصري</h3>
+        <p class="meta">مباع 2.5K+ • خامة ممتازة</p>
+        <div class="price-row"><span class="discount">%42-</span><del>$42.64</del><strong>$24.65</strong></div>
+        <p class="rate">★ ★ ★ ★ ★ <span>4.6</span></p>
+      </article>
+
+      <article class="product-card" data-id="p6" data-source="aliexpress" data-title="حذاء رياضي أبيض أخضر" data-price="28.10" data-rating="4.5" data-new="5">
+        <div class="media media-shoes-green"></div>
+        <h3>حذاء رياضي أبيض/أخضر</h3>
+        <p class="meta">مباع 1.1K+ • مظهر عصري</p>
+        <div class="price-row"><span class="discount">%21-</span><del>$35.90</del><strong>$28.10</strong></div>
+        <p class="rate">★ ★ ★ ★ ★ <span>4.5</span></p>
+      </article>
+
+      <article class="product-card" data-id="p7" data-source="aliexpress" data-title="خلاط يدوي صغير" data-price="12.81" data-rating="4.4" data-new="3">
+        <div class="media media-mixer"></div>
+        <h3>خلاط يدوي صغير للمطبخ</h3>
+        <p class="meta">مباع 950+ • عملي وسهل</p>
+        <div class="price-row"><span class="discount">%30-</span><del>$18.30</del><strong>$12.81</strong></div>
+        <p class="rate">★ ★ ★ ★ ★ <span>4.4</span></p>
+      </article>
+
+      <article class="product-card" data-id="p8" data-source="aliexpress" data-title="ساعة رجالية فضية" data-price="15.28" data-rating="4.8" data-new="4">
+        <div class="media media-watch-silver"></div>
+        <h3>ساعة رجالية فضية كلاسيكية</h3>
+        <p class="meta">مباع 3.2K+ • أناقة يومية</p>
+        <div class="price-row"><span class="discount">%24-</span><del>$20.10</del><strong>$15.28</strong></div>
+        <p class="rate">★ ★ ★ ★ ★ <span>4.8</span></p>
+      </article>
+
+      <article class="product-card" data-id="p9" data-source="aliexpress" data-title="ساعة زرقاء فاخرة" data-price="21.03" data-rating="4.9" data-new="1">
+        <div class="media media-watch-blue"></div>
+        <h3>ساعة زرقاء فاخرة للرجال</h3>
+        <p class="meta">مباع 2.8K+ • ضد الماء</p>
+        <div class="price-row"><span class="discount">%33-</span><del>$31.40</del><strong>$21.03</strong></div>
+        <p class="rate">★ ★ ★ ★ ★ <span>4.9</span></p>
+      </article>
+
+      <article class="product-card" data-id="p10" data-source="aliexpress" data-title="سماعات بلوتوث" data-price="11.99" data-rating="4.7" data-new="2">
+        <div class="media media-earbuds"></div>
+        <h3>سماعات بلوتوث لاسلكية</h3>
+        <p class="meta">مباع 6.7K+ • صوت نقي</p>
+        <div class="price-row"><span class="discount">%40-</span><del>$19.99</del><strong>$11.99</strong></div>
+        <p class="rate">★ ★ ★ ★ ★ <span>4.7</span></p>
+      </article>
+    </section>
+  </main>
+
+  <div class="auth-modal" id="authModal" aria-hidden="true">
+    <div class="auth-panel" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+      <button class="auth-close" id="authClose" type="button" aria-label="إغلاق">×</button>
+      <h2 id="authTitle">تسجيل الدخول</h2>
+      <p class="auth-sub">اختر وسيلة التسجيل المناسبة.</p>
+
+      <div class="auth-social">
+        <button type="button" class="auth-social-btn" data-provider="google">المتابعة عبر Google</button>
+        <button type="button" class="auth-social-btn" data-provider="facebook">المتابعة عبر Facebook</button>
+      </div>
+
+      <div class="divider"><span>أو</span></div>
+
+      <form id="emailForm" class="auth-form" novalidate>
+        <input id="nameInput" type="text" placeholder="الاسم الكامل" required>
+        <input id="emailInput" type="email" placeholder="البريد الإلكتروني" required>
+        <input id="emailPhoneInput" type="tel" placeholder="رقم الهاتف" required>
+        <input id="passwordInput" type="password" placeholder="كلمة المرور" minlength="6" required>
+        <button type="submit">تسجيل</button>
+      </form>
+
+      <p id="authStatus" class="auth-status" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

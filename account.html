@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>حسابي | DZBuy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f3f6fd;
+      --ink: #101827;
+      --muted: #596277;
+      --blue: #0a66ff;
+      --blue-700: #0047b3;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Cairo", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(10, 102, 255, 0.18), transparent 35%),
+        radial-gradient(circle at 90% 10%, rgba(0, 71, 179, 0.18), transparent 30%),
+        var(--bg);
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 18px;
+    }
+
+    .card {
+      width: min(96vw, 620px);
+      background: #fff;
+      border: 1px solid rgba(16, 24, 39, 0.12);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 22px 48px rgba(15, 23, 42, 0.14);
+    }
+
+    h1 { margin: 0 0 10px; font-size: clamp(28px, 4vw, 42px); }
+    p { margin: 0 0 12px; color: var(--muted); }
+
+    .line {
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 12px;
+      background: #f6f9ff;
+      border: 1px solid rgba(10, 102, 255, 0.18);
+      line-height: 1.9;
+    }
+
+    .actions {
+      margin-top: 16px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-soft {
+      background: #e9f1ff;
+      color: #1d3e78;
+    }
+
+    .btn-primary {
+      background: linear-gradient(140deg, var(--blue), var(--blue-700));
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <section class="card">
+    <h1>حسابك في DZBuy</h1>
+    <p>بيانات الحساب الحالية:</p>
+    <div class="line" id="accountInfo">جارٍ تحميل البيانات...</div>
+    <div class="actions">
+      <a class="btn btn-soft" href="index.html">العودة للرئيسية</a>
+      <button class="btn btn-primary" id="logoutBtn" type="button">تسجيل الخروج</button>
+    </div>
+  </section>
+
+  <script>
+    const info = document.getElementById("accountInfo");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    function getLocalUser() {
+      try {
+        const raw = localStorage.getItem("dzbuy_user");
+        return raw ? JSON.parse(raw) : null;
+      } catch (_) {
+        return null;
+      }
+    }
+
+    async function loadServerUser() {
+      try {
+        const response = await fetch("/api/me", { credentials: "include" });
+        if (!response.ok) return null;
+        const data = await response.json();
+        return data.user || null;
+      } catch (_) {
+        return null;
+      }
+    }
+
+    (async () => {
+      const serverUser = await loadServerUser();
+      const localUser = getLocalUser();
+
+      if (serverUser) {
+        const email = serverUser.emails && serverUser.emails[0] ? serverUser.emails[0].value : "-";
+        info.innerHTML = `
+          <strong>الاسم:</strong> ${serverUser.displayName || "-"}<br>
+          <strong>نوع الحساب:</strong> OAuth (${serverUser.provider || "-"})<br>
+          <strong>البريد الإلكتروني:</strong> ${email}
+        `;
+        logoutBtn.addEventListener("click", () => {
+          window.location.href = "/auth/logout";
+        });
+        return;
+      }
+
+      if (localUser) {
+        info.innerHTML = `
+          <strong>الاسم:</strong> ${localUser.name || "-"}<br>
+          <strong>نوع الحساب:</strong> محلي<br>
+          <strong>البريد الإلكتروني:</strong> ${localUser.email || "-"}<br>
+          <strong>رقم الهاتف:</strong> ${localUser.phone || "-"}
+        `;
+        logoutBtn.addEventListener("click", () => {
+          localStorage.removeItem("dzbuy_user");
+          window.location.href = "index.html";
+        });
+        return;
+      }
+
+      window.location.href = "index.html";
+    })();
+  </script>
+</body>
+</html>
